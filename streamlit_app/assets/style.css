@@ -1,0 +1,503 @@
+/* ==========================================================
+   SMART FARMER ADVISORY SYSTEM — BLUE INTELLIGENCE THEME
+   Inspired by reference dashboard (deep navy + cyan/teal glow)
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root{
+    --bg:            #0a0e27;
+    --bg-2:          #0d1330;
+    --panel:         #12183a;
+    --panel-2:       #161e46;
+    --panel-border:  rgba(120,150,255,.14);
+
+    --blue:          #3b82f6;
+    --cyan:          #22d3ee;
+    --teal:          #2dd4bf;
+    --purple:        #818cf8;
+
+    --success:       #2dd4bf;
+    --warning:       #f59e0b;
+    --danger:        #f43f5e;
+
+    --text:          #e7ecff;
+    --text-muted:    #8b93b8;
+    --text-faint:    #5b6389;
+}
+
+/* ---------- GLOBAL ---------- */
+
+html, body, .stApp{
+    font-family:'Poppins', sans-serif !important;
+}
+
+.stApp{
+    background:
+        radial-gradient(circle at 12% 0%, rgba(59,130,246,.10), transparent 40%),
+        radial-gradient(circle at 90% 10%, rgba(45,212,191,.08), transparent 35%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+    color:var(--text);
+}
+
+h1, h2, h3, h4, h5{
+    font-family:'Poppins', sans-serif !important;
+    color:var(--text) !important;
+}
+
+/* ---------- HIDE STREAMLIT DEFAULT CHROME ---------- */
+/* Removes the built-in "Deploy" toolbar, hamburger menu and footer
+   so the app looks like a standalone product, not a Streamlit demo. */
+
+header[data-testid="stHeader"]{
+    display:none;
+}
+
+#MainMenu{
+    visibility:hidden;
+}
+
+footer{
+    visibility:hidden;
+}
+
+div[data-testid="stToolbar"]{
+    display:none;
+}
+
+div[data-testid="stDecoration"]{
+    display:none;
+}
+
+/* ---------- SCROLLBAR ---------- */
+
+::-webkit-scrollbar{
+    width:8px;
+    height:8px;
+}
+::-webkit-scrollbar-track{
+    background:transparent;
+}
+::-webkit-scrollbar-thumb{
+    background:rgba(120,150,255,.35);
+    border-radius:10px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background:rgba(120,150,255,.55);
+}
+
+/* ---------- SIDEBAR ---------- */
+
+section[data-testid="stSidebar"]{
+    background:linear-gradient(180deg, #0d1330 0%, #0a0e27 100%);
+    border-right:1px solid var(--panel-border);
+}
+
+section[data-testid="stSidebar"] .block-container{
+    padding-top:1.2rem;
+}
+
+/* Tighten the default Streamlit gap between stacked widgets */
+section[data-testid="stSidebar"] div[data-testid="stVerticalBlock"]{
+    gap: 10px !important;
+}
+
+/* Collapsed widget labels still reserve height by default — remove it */
+section[data-testid="stSidebar"] div[data-testid="stWidgetLabel"]{
+    display:none !important;
+}
+
+section[data-testid="stSidebar"] .stSelectbox,
+section[data-testid="stSidebar"] .stDateInput{
+    margin-bottom:4px;
+}
+
+.sidebar-top{
+    text-align:center;
+    margin-bottom:22px;
+    padding-bottom:18px;
+    border-bottom:1px solid var(--panel-border);
+}
+
+.avatar{
+    width:64px;
+    height:64px;
+    border-radius:20px;
+    background:linear-gradient(135deg, var(--blue), var(--cyan));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:28px;
+    margin:auto;
+    box-shadow:0 8px 24px rgba(34,211,238,.35);
+}
+
+.sidebar-title{
+    font-size:19px;
+    font-weight:700;
+    margin-top:12px;
+    letter-spacing:.3px;
+}
+
+.sidebar-subtitle{
+    color:var(--text-muted);
+    font-size:12px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+}
+
+.sidebar-label{
+    font-weight:600;
+    font-size:12px;
+    letter-spacing:.6px;
+    text-transform:uppercase;
+    color:var(--text-muted);
+    margin-top:10px;
+    margin-bottom:4px;
+}
+
+section[data-testid="stSidebar"] div[data-baseweb="select"] > div,
+section[data-testid="stSidebar"] input{
+    background:var(--panel) !important;
+    border:1px solid var(--panel-border) !important;
+    border-radius:12px !important;
+    color:var(--text) !important;
+}
+
+/* ---------- TOP NAVBAR ---------- */
+
+.nav-left{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    height:44px;
+    padding-top:6px;
+}
+
+.logo{
+    width:44px;
+    height:44px;
+    min-width:44px;
+    border-radius:14px;
+    background:linear-gradient(135deg, var(--blue), var(--teal));
+    box-shadow:0 6px 18px rgba(34,211,238,.35);
+    position:relative;
+}
+
+.logo::after{
+    content:"🌾";
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+}
+
+.project-name{
+    font-size:22px;
+    font-weight:700;
+    color:var(--text);
+    line-height:1.2;
+}
+
+.project-desc{
+    color:var(--text-muted);
+    font-size:13px;
+}
+
+.profile{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:linear-gradient(135deg, var(--purple), var(--blue));
+    position:relative;
+    box-shadow:0 6px 16px rgba(99,102,241,.35);
+    margin-top:2px;
+}
+
+.profile::after{
+    content:"👤";
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+}
+
+.dashboard-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:22px;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.dashboard-title{
+    font-size:26px;
+    font-weight:800;
+    background:linear-gradient(90deg, #ffffff, #b6c6ff);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.dashboard-subtitle{
+    color:var(--text-muted);
+    font-size:13.5px;
+    margin-top:2px;
+}
+
+.dashboard-status{
+    background:linear-gradient(90deg, rgba(45,212,191,.18), rgba(34,211,238,.10));
+    border:1px solid rgba(45,212,191,.45);
+    color:var(--teal);
+    padding:8px 18px;
+    border-radius:30px;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:.4px;
+}
+
+/* ---------- METRICS / KPI CARDS ---------- */
+
+div[data-testid="stMetric"]{
+    background:linear-gradient(150deg, var(--panel-2) 0%, var(--panel) 100%);
+    border-radius:18px;
+    padding:20px 20px 16px 20px;
+    border:1px solid var(--panel-border);
+    box-shadow:0 10px 28px rgba(0,0,0,.28);
+    border-top:3px solid var(--blue);
+    transition:transform .15s ease, box-shadow .15s ease;
+}
+
+div[data-testid="stMetric"]:hover{
+    transform:translateY(-2px);
+    box-shadow:0 14px 32px rgba(34,211,238,.15);
+}
+
+/* position-based accent colours, matches the varied ring colours in the reference */
+div[data-testid="stHorizontalBlock"] div[data-testid="column"]:nth-of-type(1) div[data-testid="stMetric"]{
+    border-top-color:var(--blue);
+}
+div[data-testid="stHorizontalBlock"] div[data-testid="column"]:nth-of-type(2) div[data-testid="stMetric"]{
+    border-top-color:var(--cyan);
+}
+div[data-testid="stHorizontalBlock"] div[data-testid="column"]:nth-of-type(3) div[data-testid="stMetric"]{
+    border-top-color:var(--teal);
+}
+div[data-testid="stHorizontalBlock"] div[data-testid="column"]:nth-of-type(4) div[data-testid="stMetric"]{
+    border-top-color:var(--purple);
+}
+
+div[data-testid="stMetricLabel"]{
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.3px;
+    color:var(--text-muted);
+    text-transform:uppercase;
+}
+
+div[data-testid="stMetricValue"]{
+    color:var(--text);
+    font-size:26px;
+    font-weight:700;
+}
+
+div[data-testid="stMetricDelta"]{
+    font-size:13px;
+}
+
+/* ---------- SECTION HEADERS ---------- */
+
+.stApp h2, .stApp h3{
+    font-weight:700 !important;
+}
+
+/* ---------- ALERT / RECOMMENDATION PILLS ---------- */
+
+div[data-testid="stAlert"]{
+    border-radius:14px !important;
+    border:1px solid var(--panel-border);
+    font-weight:700;
+    letter-spacing:.3px;
+    padding:14px 18px !important;
+}
+
+div[data-testid="stAlertContentSuccess"], div[data-testid="stAlert"]:has(div[data-testid="stAlertContentSuccess"]){
+    background:linear-gradient(90deg, rgba(45,212,191,.16), rgba(34,211,238,.08)) !important;
+    color:var(--teal) !important;
+}
+
+div[data-testid="stAlert"]:has(div[data-testid="stAlertContentInfo"]),
+div[data-testid="stAlert"]:has(div[data-testid="stAlertContentWarning"]){
+    background:linear-gradient(90deg, rgba(245,158,11,.16), rgba(245,158,11,.06)) !important;
+    color:var(--warning) !important;
+}
+
+div[data-testid="stAlert"]:has(div[data-testid="stAlertContentError"]){
+    background:linear-gradient(90deg, rgba(244,63,94,.16), rgba(244,63,94,.06)) !important;
+    color:var(--danger) !important;
+}
+
+/* ---------- TOP-NAV PILL BUTTONS ---------- */
+/* st.button is only used for page navigation in this app, so it is
+   styled here as a pill tab rather than a generic call-to-action. */
+
+.stButton>button{
+    width:100%;
+    border-radius:30px;
+    font-weight:600;
+    font-size:13.5px;
+    padding:.5rem .8rem;
+    transition:all .15s ease;
+    margin-top:2px;
+}
+
+/* inactive nav item */
+.stButton>button[kind="secondary"],
+button[data-testid="stBaseButton-secondary"],
+button[data-testid="baseButton-secondary"]{
+    background:var(--panel) !important;
+    border:1px solid var(--panel-border) !important;
+    color:var(--text-muted) !important;
+}
+
+.stButton>button[kind="secondary"]:hover,
+button[data-testid="stBaseButton-secondary"]:hover,
+button[data-testid="baseButton-secondary"]:hover{
+    background:rgba(120,150,255,.10) !important;
+    color:var(--text) !important;
+    border-color:rgba(34,211,238,.35) !important;
+}
+
+/* active nav item */
+.stButton>button[kind="primary"],
+button[data-testid="stBaseButton-primary"],
+button[data-testid="baseButton-primary"]{
+    background:linear-gradient(90deg, var(--blue), var(--cyan)) !important;
+    border:none !important;
+    color:#04101f !important;
+    box-shadow:0 8px 20px rgba(34,211,238,.3);
+}
+
+div[data-testid="stDownloadButton"] button{
+    width:100%;
+    border-radius:12px;
+    background:linear-gradient(90deg, var(--teal), var(--cyan));
+    border:none;
+    color:#04101f;
+    font-weight:700;
+}
+
+/* ---------- DATAFRAME / TABLE ---------- */
+
+div[data-testid="stDataFrame"]{
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid var(--panel-border);
+}
+
+/* ---------- PLOTLY CHART CARDS ---------- */
+
+.js-plotly-plot{
+    background:linear-gradient(150deg, var(--panel-2) 0%, var(--panel) 100%) !important;
+    border-radius:18px;
+    padding:10px;
+    border:1px solid var(--panel-border);
+    box-shadow:0 10px 28px rgba(0,0,0,.28);
+}
+
+/* ---------- PROGRESS BAR ---------- */
+
+.stProgress>div>div>div{
+    background:linear-gradient(90deg, var(--blue), var(--cyan)) !important;
+    border-radius:20px;
+}
+
+.stProgress>div>div{
+    background:rgba(255,255,255,.06) !important;
+    border-radius:20px;
+}
+
+/* ---------- CUSTOM SCORE BARS ---------- */
+
+.score-row{
+    margin-bottom:14px;
+}
+
+.score-row-head{
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    color:var(--text-muted);
+    margin-bottom:6px;
+    font-weight:600;
+}
+
+.score-row-head span.val{
+    color:var(--text);
+    font-weight:700;
+}
+
+.score-track{
+    width:100%;
+    height:10px;
+    border-radius:20px;
+    background:rgba(255,255,255,.06);
+    overflow:hidden;
+}
+
+.score-fill{
+    height:100%;
+    border-radius:20px;
+}
+
+/* ---------- BADGES ---------- */
+
+.badge{
+    display:inline-block;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:.4px;
+}
+
+.badge-blue{ background:rgba(59,130,246,.16); color:var(--blue); border:1px solid rgba(59,130,246,.4); }
+.badge-teal{ background:rgba(45,212,191,.16); color:var(--teal); border:1px solid rgba(45,212,191,.4); }
+.badge-orange{ background:rgba(245,158,11,.16); color:var(--warning); border:1px solid rgba(245,158,11,.4); }
+.badge-red{ background:rgba(244,63,94,.16); color:var(--danger); border:1px solid rgba(244,63,94,.4); }
+
+/* ---------- DIVIDER ---------- */
+
+hr{
+    border-color:var(--panel-border) !important;
+    margin:1.4rem 0 !important;
+}
+
+/* ---------- SPACING ---------- */
+
+.block-container{
+    padding-top:1.6rem;
+    padding-bottom:1.5rem;
+    max-width:98%;
+}
+
+/* ---------- ABOUT PAGE MARKDOWN ---------- */
+
+.stApp .stMarkdown h3{
+    color:var(--cyan) !important;
+    margin-top:22px;
+    font-weight:700 !important;
+}
+
+.stApp .stMarkdown ul{
+    color:var(--text-muted);
+}
+
+.stApp .stMarkdown li{
+    margin-bottom:4px;
+}
