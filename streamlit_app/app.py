@@ -2,6 +2,7 @@ import subprocess
 import sqlite3
 from datetime import date, datetime
 from pathlib import Path
+import download_assets
 
 import pandas as pd
 import plotly.express as px
