@@ -1,7 +1,16 @@
-/* ==========================================================
-   SMART FARMER ADVISORY SYSTEM — BLUE INTELLIGENCE THEME
-   Inspired by reference dashboard (deep navy + cyan/teal glow)
-   ========================================================== */
+/* Hide Streamlit sidebar collapse/expand button */
+
+button[kind="header"]{
+    display: none !important;
+}
+
+[data-testid="stSidebarCollapseButton"]{
+    display: none !important;
+}
+
+[data-testid="stSidebarCollapsedControl"]{
+    display: none !important;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
@@ -500,11 +509,4 @@ hr{
 
 .stApp .stMarkdown li{
     margin-bottom:4px;
-}
-
-/* Hide Streamlit's default sidebar toggle */
-
-button[kind="header"]{
-    opacity:0;
-    pointer-events:none;
 }

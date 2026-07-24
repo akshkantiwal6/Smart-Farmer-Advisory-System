@@ -418,31 +418,16 @@ brand_col, *nav_cols, profile_col = st.columns(
 )
 
 with brand_col:
-
-    c1, c2 = st.columns([0.12, 0.88])
-
-    with c1:
-        if st.button("⏪", key="toggle_sidebar"):
-            html("""
-            <script>
-            const btn = window.parent.document.querySelector('button[kind="header"]');
-            if(btn){ btn.click(); }
-            </script>
-            """, height=0)
-
-    with c2:
-        st.markdown(
-            """
-        <div class="nav-left">
-        <div class="logo"></div>
-        <div>
-        <div class="project-name">Smart Farmer Advisory System</div>
-        <div class="project-desc">AI Powered Market Intelligence Dashboard</div>
-        </div>
-        </div>
-            """,
-            unsafe_allow_html=True
-        )
+    st.markdown(
+        """<div class="nav-left">
+<div class="logo"></div>
+<div>
+<div class="project-name">Smart Farmer Advisory System</div>
+<div class="project-desc">AI Powered Market Intelligence Dashboard</div>
+</div>
+</div>""",
+        unsafe_allow_html=True
+    )
 
 for col, item in zip(nav_cols, NAV_ITEMS):
     with col:
