@@ -502,19 +502,22 @@ hr{
     margin-bottom:4px;
 }
 
-/* Move sidebar toggle next to logo */
 
-[data-testid="stSidebarCollapseButton"]{
+/* Move sidebar toggle beside top navbar logo */
+
+button[kind="header"]{
     position: fixed !important;
-    top: 145px !important;
-    left: 205px !important;
-    z-index: 99999 !important;
+    top: 154px !important;
+    left: 255px !important;
+    z-index: 999999 !important;
 }
 
 /* Older Streamlit versions */
-[data-testid="stSidebarCollapsedControl"]{
+/* Move sidebar toggle beside top navbar logo */
+
+button[kind="header"]{
     position: fixed !important;
-    top: 145px !important;
-    left: 205px !important;
-    z-index: 99999 !important;
+    top: 154px !important;
+    left: 255px !important;
+    z-index: 999999 !important;
 }
