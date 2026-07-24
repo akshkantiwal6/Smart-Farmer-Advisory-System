@@ -3,7 +3,6 @@ import pandas as pd
 
 
 def get_filtered_data(commodity, state):
-
     conn = sqlite3.connect("database/agriculture.db")
 
     query = """
@@ -13,12 +12,7 @@ def get_filtered_data(commodity, state):
       AND state = ?
     """
 
-    df = pd.read_sql_query(
-        query,
-        conn,
-        params=(commodity, state)
-    )
-
+    df = pd.read_sql_query(query, conn, params=(commodity, state))
     conn.close()
 
     if df.empty:
