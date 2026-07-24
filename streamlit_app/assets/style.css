@@ -472,7 +472,7 @@ hr{
 /* ---------- SPACING ---------- */
 
 .block-container{
-    padding-top:1.6rem;
+    padding-top:4rem !important;
     padding-bottom:1.5rem;
     max-width:98%;
 }
