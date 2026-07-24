@@ -502,22 +502,9 @@ hr{
     margin-bottom:4px;
 }
 
-
-/* Move sidebar toggle beside top navbar logo */
-
-button[kind="header"]{
-    position: fixed !important;
-    top: 154px !important;
-    left: 255px !important;
-    z-index: 999999 !important;
-}
-
-/* Older Streamlit versions */
-/* Move sidebar toggle beside top navbar logo */
+/* Hide Streamlit's default sidebar toggle */
 
 button[kind="header"]{
-    position: fixed !important;
-    top: 154px !important;
-    left: 255px !important;
-    z-index: 999999 !important;
+    opacity:0;
+    pointer-events:none;
 }
