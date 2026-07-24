@@ -501,3 +501,20 @@ hr{
 .stApp .stMarkdown li{
     margin-bottom:4px;
 }
+
+/* Move sidebar toggle next to logo */
+
+[data-testid="stSidebarCollapseButton"]{
+    position: fixed !important;
+    top: 145px !important;
+    left: 205px !important;
+    z-index: 99999 !important;
+}
+
+/* Older Streamlit versions */
+[data-testid="stSidebarCollapsedControl"]{
+    position: fixed !important;
+    top: 145px !important;
+    left: 205px !important;
+    z-index: 99999 !important;
+}
