@@ -1,6 +1,5 @@
 import sqlite3
 import pandas as pd
-import streamlit as st
 
 
 def get_filtered_data(commodity, state):
@@ -22,16 +21,10 @@ def get_filtered_data(commodity, state):
 
     conn.close()
 
-    st.write("Columns:", list(df.columns))
-    st.write(df.head())
-
     if df.empty:
         return df
 
-    df["date"] = pd.to_datetime(df["date"])
+    df["date"] = pd.to_datetime(df["date"], errors="coerce")
     df["month"] = df["date"].dt.month
-
-    st.write("Columns after processing:", list(df.columns))
-    st.write(df.head())
 
     return df.sort_values("date")
