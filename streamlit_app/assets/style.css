@@ -52,14 +52,6 @@ footer{
     visibility:hidden;
 }
 
-div[data-testid="stToolbar"]{
-    display:none;
-}
-
-div[data-testid="stDecoration"]{
-    display:none;
-}
-
 /* ---------- SCROLLBAR ---------- */
 
 ::-webkit-scrollbar{
