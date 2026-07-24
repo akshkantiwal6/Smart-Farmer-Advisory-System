@@ -44,10 +44,6 @@ h1, h2, h3, h4, h5{
 /* Removes the built-in "Deploy" toolbar, hamburger menu and footer
    so the app looks like a standalone product, not a Streamlit demo. */
 
-header[data-testid="stHeader"]{
-    display:none;
-}
-
 #MainMenu{
     visibility:hidden;
 }
