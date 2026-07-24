@@ -21,7 +21,12 @@ for local_path, remote_file in FILES.items():
 
     print(f"Downloading {remote_file}...")
 
-    response = requests.get(f"{BASE_URL}/{remote_file}", stream=True)
+    response = requests.get(
+        f"{BASE_URL}/{remote_file}",
+        stream=True,
+        timeout=120,
+    )
+
     response.raise_for_status()
 
     with open(path, "wb") as f:
